@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="jumbotron">
     <h1>Editar Fazenda</h1>
 
     <!-- Exibe erros caso sejam retornados na request -->
@@ -39,4 +40,5 @@
             
         </div>
     {!! Form::close() !!}
+</div>
 @endsection

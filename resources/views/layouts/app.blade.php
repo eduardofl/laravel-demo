@@ -11,7 +11,7 @@
 <body style="position: absolute; width: 100%; top: 0; left: 0">
     <div id="app">
         @include('inc.navbar')
-        <div style="position: fixed; width: 100%; height: calc(100vh - 56px); background-image: url(../img/background.png); background-size: cover;">
+        <div style="position: fixed; width: 100%; height: calc(100vh - 56px); background-image: url(../../img/background.png); background-size: cover; z-index: -1;">
         </div>
         <div class="container" style="padding-top: 20px;">
             @yield('content')

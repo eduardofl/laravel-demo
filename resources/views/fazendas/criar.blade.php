@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="jumbotron">
     <h1>Criar Fazenda</h1>
 
     @if ($errors->any())
@@ -35,6 +36,6 @@
             </div>
             
         </div>
-        
     {!! Form::close() !!}
+</div>
 @endsection
