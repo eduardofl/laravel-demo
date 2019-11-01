@@ -1,11 +1,16 @@
-PROJETO DE DEMONSTRAÇÃO DO FRAMEWORK LARAVEL
+Projeto de demonstração do framework Laravel
 
 Para instalar:
-
-  1 - Clone no seu computador
-  2 - composer install
-  3 - npm install
+  
+```sh
+git clone https://github.com/eduardofl/laravel-demo.git
+cd laravel-demo
+composer install
+npm install
+```
 
 Para executar:
 
-  1 - php artisan serve
+```sh
+php artisan serve
+```
