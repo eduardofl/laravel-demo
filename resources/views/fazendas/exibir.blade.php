@@ -13,10 +13,17 @@
     </div>
     <div class="card" style="padding: 12px;">
         <h3>Lista de animais da fazenda</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Animal 1</li>
-            <li class="list-group-item">Animal 2</li>
-            <li class="list-group-item">Animal 3</li>
-        </ul>
+
+        @if(count($animais) > 0)
+            <ul class="list-group">
+                @foreach($animais as $animal)
+                    <li class="list-group-item">
+                        {{$animal->Nome}}
+                    </li>
+                @endforeach
+            </ul>
+        @else
+            <p>Não há animais nessa fazenda.</p>
+        @endif
     </div>
 @endsection

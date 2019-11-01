@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 
 use App\Fazenda;
+use App\Animal;
 
 class FazendasController extends Controller
 {
@@ -55,7 +56,8 @@ class FazendasController extends Controller
      */
     public function show($id) {
         $fazenda = Fazenda::find($id);
-        return view('fazendas.exibir')->with('fazenda', $fazenda);
+        $animais = Animal::where('CodFazenda', $id)->get();
+        return view('fazendas.exibir')->with('fazenda', $fazenda)->with('animais', $animais);
     }
 
     /**
