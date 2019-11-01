@@ -13,10 +13,12 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/fazendas', 'FazendasController@index');
-Route::get('/fazendas/create', 'FazendasController@create');
-Route::post('/fazendas/store', 'FazendasController@store');
-Route::get('/fazendas/edit', 'FazendasController@edit');
-Route::put('/fazendas/update', 'FazendasController@update');
+// Route::get('/fazendas', 'FazendasController@index');
+// Route::post('/fazendas', 'FazendasController@store');
+// Route::get('/fazendas/create', 'FazendasController@create');
+// Route::get('/fazendas/{fazenda}', 'FazendasController@show');
+// Route::get('/fazendas/{fazenda}/edit', 'FazendasController@edit');
+// Route::put('/fazendas/{fazenda}', 'FazendasController@update');
+// Route::delete('/fazendas/{fazenda}', 'FazendasController@destroy');
 
-// Route::resource('fazendas', 'FazendasController');
+Route::resource('fazendas', 'FazendasController');

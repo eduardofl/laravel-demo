@@ -9,20 +9,30 @@ use App\Fazenda;
 
 class FazendasController extends Controller
 {
+    /**
+     * Recupera todas fazendas
+     *
+     */
     public function index() {
-        $fazendas = ['Fazenda Esperança', 'Fazenda Santo Antônio', 'Fazenda do Seu Juarez'];
-
         $fazendas = Fazenda::all();
         return view('fazendas.index')->with('fazendas', $fazendas);
     }
 
+    /**
+     * Retorna formulário de criação de fazenda
+     *
+     */
     public function create() {
         return view('fazendas.criar');
     }
 
+    /**
+     * Salva fazenda no banco
+     *
+     */
     public function store(Request $request) {
         // Valida os campos
-        $validator = $request->validate([
+        $request->validate([
             'nome' => 'required',
             'cnpj' => 'required|formato_cnpj',
             'telefone' => 'required|telefone_com_ddd'
@@ -39,12 +49,29 @@ class FazendasController extends Controller
         return redirect('/fazendas')->with('success', 'Fazenda criada com sucesso!');
     }
 
+    /**
+     * Recupera fazenda e a exibe numa view para o usuário.
+     *
+     */
+    public function show($id) {
+        $fazenda = Fazenda::find($id);
+        return view('fazendas.exibir')->with('fazenda', $fazenda);
+    }
+
+    /**
+     * Recupera fazenda e a exibe num formulário de edição para o usuário.
+     *
+     */
     public function edit($id) {
         $fazenda = Fazenda::find($id);
 
-        return view('fazenda.editar')->with('fazenda', $fazenda);
+        return view('fazendas.editar')->with('fazenda', $fazenda);
     }
 
+    /**
+     * Salva alterações da fazenda no banco
+     *
+     */
     public function update(Request $request, $id) {
         $fazenda = Fazenda::find($id);
 
@@ -53,6 +80,10 @@ class FazendasController extends Controller
         return redirect('/fazendas')->with('success', 'Fazenda atualizada!');
     }
 
+    /**
+     * Deleta fazenda do banco
+     *
+     */
     public function destroy($id) {
         $fazenda = Fazenda::find($id);
         $fazenda->delete();

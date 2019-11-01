@@ -9,4 +9,7 @@ class Fazenda extends Model {
     protected $table = 'fazenda';
     // Primary Key
     public $primaryKey = 'CodFazenda';
+    public $incrementing = false;
+
+    protected $fillable = ['CodFazenda', 'Nome', 'CNPJ', 'Telefone'];
 }

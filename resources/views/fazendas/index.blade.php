@@ -10,7 +10,9 @@
     @if(count($fazendas) > 0)
         <ul class="list-group">
             @foreach($fazendas as $fazenda)
-                <li class="list-group-item">{{$fazenda->Nome}}</li>
+                <li class="list-group-item">
+                    <a href="/fazendas/{{$fazenda->CodFazenda}}" style="text-decoration: none; color: #666;">{{$fazenda->Nome}}</a>
+                </li>
             @endforeach
         </ul>
     @else

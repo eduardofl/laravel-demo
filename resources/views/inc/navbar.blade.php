@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-success" style="margin-bottom: 20px;">
+<nav class="navbar navbar-expand navbar-dark bg-success" >
   <a class="navbar-brand" href="/">Laravel Demo</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
