@@ -2,6 +2,18 @@
 
 @section('content')
     <h1>Criar Fazenda</h1>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <span>Houveram erros ao criar a fazenda:</span><br/>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    
     {!! Form::open(['action' => 'FazendasController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{Form::label('nome', 'Nome')}}

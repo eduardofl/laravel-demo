@@ -22,11 +22,11 @@ class FazendasController extends Controller
 
     public function store(Request $request) {
         // Valida os campos
-        $validator = $request->validate(
-            ['nome' => 'required'],
-            ['cnpj' => 'required|formato_cnpj'],
-            ['telefone' => 'required|telefone_com_ddd']
-        );
+        $validator = $request->validate([
+            'nome' => 'required',
+            'cnpj' => 'required|formato_cnpj',
+            'telefone' => 'required|telefone_com_ddd'
+        ]);
 
         // Cria objeto Fazenda e salva no banco
         $fazenda = new Fazenda;
